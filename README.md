@@ -2,11 +2,13 @@
 
 
 1.外链的静态图片是否缓存需要在服务器端nginx或者apache的配置文件中配，apache在httpd.conf中默认没有打开，#LoadModule expires_module modules/mod_expires.so，去掉#号，并且加上
+
 <IfModule expires_module>
     ExpiresActive On
     ExpiresByType text/html "access plus 15 days 2 hours"
     ExpiresDefault "access plus 1 month"
 </IfModule>
+
 即可
 
 2.返回304还是直接from cache跟请求发送方式有关，在先前至少有过一次有效访问后，在以后对同一URI资源的请求中，浏览器只进行两种动作：
@@ -19,3 +21,4 @@
 3.所以可见截图中不同操作，点击 '刷新'按钮时会去服务器端验证，返回304,点击'后退'再'前进'直接从cache中取了，返回200
 
 参考文档：http://www.haidx.com/http-304-and-200-from-cache.html
+
