@@ -1,7 +1,13 @@
 说明：测试浏览器：pc上chrome  版本：32.0.1700.107
 
 
-1.外链的静态图片是否缓存需要在服务器端nginx或者apache的配置文件中配
+1.外链的静态图片是否缓存需要在服务器端nginx或者apache的配置文件中配，apache在httpd.conf中默认没有打开，#LoadModule expires_module modules/mod_expires.so，去掉#号，并且加上
+<IfModule expires_module>
+    ExpiresActive On
+    ExpiresByType text/html "access plus 15 days 2 hours"
+    ExpiresDefault "access plus 1 month"
+</IfModule>
+即可
 
 2.返回304还是直接from cache跟请求发送方式有关，在先前至少有过一次有效访问后，在以后对同一URI资源的请求中，浏览器只进行两种动作：
 
