@@ -16,7 +16,7 @@
 
 刷新：重发请求
 
-后退再前进：from cache，从cache中取了，进一步证明no-cache不是不缓存
+后退再前进：from cache，从cache中取了，进一步证明no-cache不是不缓存,no-store才是真不缓存
 
 新开窗口填url回车：重发请求
 
