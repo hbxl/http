@@ -1,5 +1,3 @@
-说明：测试浏览器：pc上chrome  版本：32.0.1700.107
-
 
 1.外链的静态图片是否缓存需要在服务器端nginx或者apache的配置文件中配，apache打开方法请看截图
 
@@ -12,7 +10,7 @@
 
 3.所以可见截图中不同操作，点击 '刷新'按钮时会去服务器端验证，返回304,点击'后退'再'前进'直接从cache中取了，返回200
 
-4.php文件中header（'cache-control:no-cache'）测试，php文件名index.php，下面说明均是对index.php的请求的，非内嵌的外链图片或js，括号中ie10标准模式下表现
+4.php文件中header（'cache-control:no-cache'）测试，php文件名index.php，下面说明均是对index.php的请求的，非内嵌的外链图片或js，括号中为ie10标准模式下表现
 
 刷新：重发请求（重发请求）
 
