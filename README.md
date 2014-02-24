@@ -12,5 +12,20 @@
 
 3.所以可见截图中不同操作，点击 '刷新'按钮时会去服务器端验证，返回304,点击'后退'再'前进'直接从cache中取了，返回200
 
+4.php文件中header（'cache-control:no-cache'）测试，php文件名index.php，下面说明均是对index.php的请求的，非内嵌的外链图片或js
+刷新：重发请求
+后退再前进：from cache，从cache中取了，进一步证明no-cache不是不缓存
+新开窗口填url回车：重发请求
+地址栏回车：重发请求
+重载：重发请求
+
+5.php文件中header（'cache-control:max-age=1234'）测试：
+刷新：重发请求
+后退再前进：from cache
+新开窗口填url回车：from cache
+地址栏回车：重发请求
+重载：重发请求
+
+
 参考文档：http://www.haidx.com/http-304-and-200-from-cache.html
 
