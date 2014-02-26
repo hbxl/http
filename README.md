@@ -1,4 +1,3 @@
-
 1.外链的静态图片是否缓存需要在服务器端nginx或者apache的配置文件中配，apache打开方法请看截图
 
 2.返回304还是直接from cache跟请求发送方式有关，在先前至少有过一次有效访问后，在以后对同一URI资源的请求中，浏览器只进行两种动作：
@@ -10,7 +9,7 @@
 
 3.所以可见截图中不同操作，点击 '刷新'按钮时会去服务器端验证，返回304,点击'后退'再'前进'直接从cache中取了，返回200
 
-4.php文件中header（'cache-control:no-cache'）测试，php文件名index.php，下面说明均是对index.php的请求的，非内嵌的外链图片或js，括号中为ie10标准模式下表现
+4.php文件中header（'cache-control:no-cache'）测试，php文件名index.php，下面说明均是对index.php的请求的，非内嵌的外链图片或js，测试浏览器：pc版chrome，version: 33.0.1750.117 ,括号中为ie10标准模式下表现
 
 刷新：重发请求（重发请求）
 
