@@ -13,32 +13,6 @@
 
 不同操作结果也不同，下面是我做的测试，文件名为index.php,测试浏览器：pc chrome， version：33.0.1750.117，括号里是ie10标准模式下的表现。
 
-测试代码：
-
-<?php
-
-header('Cache-Control:no-cache');
-
-?>
-
-<!DOCTYPE html>
-
-<html>
-
-<body>
-
-<div class="pic">
-
-	<img src="test.jpg" />
-	
-	<script type='text/javascript' src='jquery.js'></script>
-	
-</div>
-
-</body>
-
-</html>
-
 结果：index.php请求，非内嵌的外链图片或js
 
 刷新：重发请求（ie10标准模式下是重发请求）
