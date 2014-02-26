@@ -13,7 +13,11 @@
 
 不同操作结果也不同，下面是我做的测试，文件名为index.php,测试浏览器：pc chrome， version：33.0.1750.117，括号里是ie10标准模式下的表现。
 
-结果：index.php请求，非内嵌的外链图片或js
+结果：
+
+a.
+
+header('Cache-Control:no-cache');时index.php请求，非内嵌的外链图片或js
 
 刷新：重发请求（ie10标准模式下是重发请求）
 
@@ -25,7 +29,9 @@
 
 重载：重发请求（ie10没有重载）
 
-将php文件中header('Cache-Control:no-cache');改为header（'cache-control:max-age=1234'）结果，仍然是index.php请求的：
+b.
+
+header（'cache-control:max-age=1234'）结果，仍然是index.php请求的：
 
 刷新：重发请求（ie10标准模式下是重发请求）
 
