@@ -21,11 +21,11 @@ header('Cache-Control:no-cache');时index.php请求，非内嵌的外链图片�
 
 刷新：重发请求（ie10标准模式下是重发请求）
 
-后退再前进：from cache，从cache中取了，进一步证明no-cache不是不缓存,no-store才是真不缓存（304，服务器验证了）
+后退再前进：from cache，从cache中取了，进一步证明no-cache不是不缓存,no-store才是真不缓存（ie10:304，服务器验证了）
 
-新开窗口填url回车：重发请求（from cache）
+新开窗口填url回车：重发请求（ie10:from cache）
 
-地址栏回车：重发请求（304）
+地址栏回车：重发请求（ie10:304）
 
 重载：重发请求（ie10没有重载）
 
@@ -35,11 +35,11 @@ header（'cache-control:max-age=1234'）结果，仍然是index.php请求的：
 
 刷新：重发请求（ie10标准模式下是重发请求）
 
-后退再前进：from cache（304）
+后退再前进：from cache（ie10:304）
 
-新开窗口填url回车：from cache（304）
+新开窗口填url回车：from cache（ie10:304）
 
-地址栏回车：重发请求（304）
+地址栏回车：重发请求（ie10:304）
 
 重载：重发请求（没有重载）
 
